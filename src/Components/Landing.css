@@ -1,0 +1,8 @@
+.bg-image{
+    background-image: url("../assests//Group\ 84.png");
+   width: 90%;
+   
+   background-size: cover;
+   background-repeat: no-repeat;
+  
+}
