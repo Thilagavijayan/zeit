@@ -18,7 +18,7 @@ const Value = () => {
 </div>
 <div className='absolute inset-0 flex flex-col items-center justify-center text-center px-9 translate-y-[100%] group-hover:translate-y-0 transition-all bg-black bg-opacity-50'>
   <h1 className='font-serif text-3xl font-bold'>Women empowerment</h1>
-  <p className='mb-3 font-serif text-lg'>lorem text was not working in this condition</p>
+ 
 </div>
    
  </div>
@@ -28,8 +28,8 @@ const Value = () => {
   <img className='object-cover w-full h-full' src={child} alt=''/>
 </div>
 <div className='absolute inset-0 flex flex-col items-center justify-center text-center px-9 translate-y-[100%] group-hover:translate-y-0 transition-all bg-black bg-opacity-50'>
-  <h1 className='font-serif text-3xl font-bold'>Women empowerment</h1>
-  <p className='mb-3 font-serif text-lg'>lorem text was not working in this condition</p>
+  <h1 className='font-serif text-3xl font-bold'>Children Education</h1>
+  
 </div>
    </div>
 
@@ -38,8 +38,8 @@ const Value = () => {
   <img className='object-cover w-full h-full' src={consult} alt=''/>
 </div>
 <div className='absolute inset-0 flex flex-col items-center justify-center text-center px-9 translate-y-[100%] group-hover:translate-y-0 transition-all bg-black bg-opacity-50'>
-  <h1 className='font-serif text-3xl font-bold'>Women empowerment</h1>
-  <p className='mb-3 font-serif text-lg'>lorem text was not working in this condition</p>
+  <h1 className='font-serif text-3xl font-bold'>Consultation</h1>
+  
 </div>
    </div>
   
