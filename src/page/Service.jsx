@@ -11,8 +11,10 @@ const Service = () => {
     <div>
         {/* Landing */}
         <Landing/>
+        <div className="mt-8"></div>
         {/* Service */}
         <Serves/>
+        <div className="mb-10"></div>
         {/* Testinomial */}
         <Testinomial/>
        

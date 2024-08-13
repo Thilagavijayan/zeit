@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Contactus = () => {
   return (
     <div className='p-8'>
-      {/* News Section with Professional Card Layout */}
+      
       <h1 className='text-6xl font-serif font-medium mb-12'>NEWS</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-16'>
         
@@ -45,13 +45,18 @@ const Contactus = () => {
         </Link>
       </div>
 
-      {/* Connect Section */}
       <div className='flex items-center space-x-6'>
-        <h1 className='text-5xl font-serif font-medium mr-8'>CONNECT:</h1>
+      <h1 className='text-5xl font-serif font-medium mr-8'>CONNECT:</h1>
+      <a href="https://www.instagram.com/zeit_tech/" target="_blank" rel="noopener noreferrer">
         <img className='h-12' src={insta} alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/company/zeittechgroup " target="_blank" rel="noopener noreferrer">
         <img className='h-12' src={linked} alt="LinkedIn" />
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
         <img className='h-12' src={twitter} alt="Twitter" />
-      </div>
+      </a>
+    </div>
       
     </div>
   )
