@@ -6,7 +6,7 @@ import emsImage from '../assests/ems.jpeg';
 const OurWorks = () => {
   return (
     <div className="p-8">
-       <h1 className="text-4xl font-serif font-semibold mb-12 text-gray-700 text-center">OUR WORKS</h1>
+      
       {/* Thiruvallur District Roller Skating Association */}
       <div className='flex flex-wrap items-center mb-24'>
         <div className='w-full md:w-1/2'>

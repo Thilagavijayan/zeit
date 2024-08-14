@@ -6,13 +6,7 @@ const Contactt = () => {
     <div>
          {/* Contact */}
          <Contact/>
-      
-        
-
-
-
-
-    </div>
+       </div>
   )
 }
 
