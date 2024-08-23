@@ -6,3 +6,41 @@
    background-repeat: no-repeat;
   
 }
+
+
+
+/* Marquee Animation */
+/* Running Headline Animation */
+@keyframes scroll-left-delayed {
+  0% {
+      transform: translateX(100%);
+      animation-timing-function: ease-in;
+  }
+  10% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+      animation-timing-function: ease-out;
+  }
+}
+
+.animate-scroll-delayed {
+  animation: scroll-left-delayed 20s linear infinite;
+}
+
+  
+  
+  .animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 10s linear infinite;
+  }
+  
+  .bg-image {
+    background-size: cover;
+    background-position: center;
+  }
+
+  
