@@ -33,62 +33,78 @@ const click = () => {
   );
 };
 
-
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation(); 
 
   return (
-    <div className="p-4 bg-white shadow-lg">
-      <div className="container flex items-center justify-between mx-auto "> 
-       
-        <img className='w-16 h-16  mr-6 ' src={logo} alt="logo" />
-        
-      
-        <ul className="hidden md:space-x-8 text-center md:flex md:font-serif">
-          <li className={`text-black text-xl ${location.pathname === "/" ? "font-bold text-purple-500" : ""}`}>
-            <Link to="/">Home</Link>
-          </li>
-          <li className={`text-black text-xl ${location.pathname === "/service" ? "font-bold text-purple-500" : ""}`}>
-            <Link to="/service">Services</Link>
-          </li>
-          <li className={`text-black text-xl ${location.pathname === "/Events" ? "font-bold text-purple-500" : ""}`}>
-            <Link to="/Events">Events</Link>
-          </li>
-        </ul>
-        
-        
-        <div className="flex space-x-5">
-          <button className="px-3 py-2 font-serif font-medium text-white bg-purple-500 rounded hover:bg-purple-600">
-            <Link to="/contact">Schedule a Call</Link>
-          </button>
-          <button onClick={click} className="px-3 py-2 font-serif font-medium text-white bg-green-500 rounded hover:bg-green-600">
-            Recent Updates
-          </button>
-        </div>
+    <>
+      <div className="p-4 bg-white shadow-lg sticky top-0 z-50">
+        <div className="container flex items-center justify-between mx-auto"> 
+          <img className='w-12 h-12 md:w-16 md:h-16 mr-6' src={logo} alt="logo" />
+          
+          <ul className="hidden md:flex md:space-x-8 text-center md:font-serif">
+            <li className={`text-black text-lg md:text-xl ${location.pathname === "/" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/">Home</Link>
+            </li>
+            <li className={`text-black text-lg md:text-xl ${location.pathname === "/service" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/service">Services</Link>
+            </li>
+            <li className={`text-black text-lg md:text-xl ${location.pathname === "/Events" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/Events">Events</Link>
+            </li>
+          </ul>
 
-      
-        <div className='cursor-pointer md:hidden'>
-          {!toggle ?
-            <IoMenu onClick={() => setToggle(true)} />
-            : <IoClose className='float-right' onClick={() => setToggle(false)} />}
-          {toggle ?
-            <ul className="absolute right-0 p-2 mt-8 bg-white rounded shadow-2xl font-serif">
-              <li className={`p-3 text-black ${location.pathname === "/" ? "font-bold text-purple-500" : ""}`}>
-                <Link to="/" onClick={() => setToggle(false)}>Home</Link>
-              </li>
-              <li className={`p-3 text-black ${location.pathname === "/service" ? "font-bold text-purple-500" : ""}`}>
-                <Link to="/service" onClick={() => setToggle(false)}>Services</Link>
-              </li>
-              <li className={`p-3 text-black ${location.pathname === "/Events" ? "font-bold text-purple-500" : ""}`}>
-                <Link to="/Events" onClick={() => setToggle(false)}>Events</Link>
-              </li>
-            </ul>
-            : null}
+          <div className="hidden md:flex space-x-5">
+            <button className="px-3 py-2 font-serif font-medium text-white bg-purple-500 rounded hover:bg-purple-600">
+              <Link to="/contact">Schedule a Call</Link>
+            </button>
+            <button onClick={click} className="px-3 py-2 font-serif font-medium text-white bg-green-500 rounded hover:bg-green-600">
+              Recent Updates
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className='cursor-pointer md:hidden'>
+            {!toggle ?
+              <IoMenu size={30} onClick={() => setToggle(true)} />
+              : <IoClose size={30} onClick={() => setToggle(false)} />}
+          </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {toggle && (
+          <ul className="absolute top-16 right-0 w-full bg-white rounded shadow-2xl font-serif md:hidden">
+            <li className={`p-3 text-black border-b ${location.pathname === "/" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/" onClick={() => setToggle(false)}>Home</Link>
+            </li>
+            <li className={`p-3 text-black border-b ${location.pathname === "/service" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/service" onClick={() => setToggle(false)}>Services</Link>
+            </li>
+            <li className={`p-3 text-black ${location.pathname === "/Events" ? "font-bold text-purple-500" : ""}`}>
+              <Link to="/Events" onClick={() => setToggle(false)}>Events</Link>
+            </li>
+            <li className="p-3">
+              <button className="w-full px-3 py-2 font-serif font-medium text-white bg-purple-500 rounded hover:bg-purple-600">
+                <Link to="/contact" onClick={() => setToggle(false)}>Schedule a Call</Link>
+              </button>
+            </li>
+            <li className="p-3">
+              <button onClick={click} className="w-full px-3 py-2 font-serif font-medium text-white bg-green-500 rounded hover:bg-green-600">
+                Recent Updates
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
+      
+      {/* Page Content Adjustment */}
+      <div className={`transition-all duration-300 ${toggle ? 'mt-40' : 'mt-0'}`}>
+        {/* Your page content goes here */}
+      </div>
+      
       <ToastContainer />
-    </div>
+    </>
   );
 };
 
