@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +12,6 @@ const Contact = () => {
     message: "",
   });
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,7 +32,7 @@ const Contact = () => {
     try {
       const response = await axios.post("http://localhost:5000/send", formData);
       if (response.status === 200) {
-        setSuccess("Message sent successfully!");
+        toast.success("Message sent successfully!");
         setFormData({
           firstName: "",
           lastName: "",
@@ -55,7 +56,6 @@ const Contact = () => {
           Want to Contact us? Need details about your management? Let us know.
         </p>
         {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-500">{success}</p>}
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2 lg:pr-2">
@@ -152,6 +152,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

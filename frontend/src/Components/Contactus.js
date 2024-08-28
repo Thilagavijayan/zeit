@@ -15,7 +15,7 @@ const Contactus = () => {
         <div 
           className='slider flex gap-8' 
           style={{ 
-            animation: 'slide 15s linear infinite' 
+            animation: 'slide 40s linear infinite' 
           }}
         >
           {/* News Card 1 */}
